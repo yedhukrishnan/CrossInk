@@ -50,15 +50,17 @@ void HalDisplay::drawImageTransparent(const uint8_t* imageData, uint16_t x, uint
 }
 
 EInkDisplay::RefreshMode convertRefreshMode(HalDisplay::RefreshMode mode) {
-  switch (mode) {
-    case HalDisplay::FULL_REFRESH:
-      return EInkDisplay::FULL_REFRESH;
-    case HalDisplay::HALF_REFRESH:
-      return EInkDisplay::HALF_REFRESH;
-    case HalDisplay::FAST_REFRESH:
-    default:
-      return EInkDisplay::FAST_REFRESH;
-  }
+  // switch (mode) {
+  //   case HalDisplay::FULL_REFRESH:
+  //     return EInkDisplay::FULL_REFRESH;
+  //   case HalDisplay::HALF_REFRESH:
+  //     return EInkDisplay::HALF_REFRESH;
+  //   case HalDisplay::FAST_REFRESH:
+  //   default:
+  //     return EInkDisplay::FAST_REFRESH;
+  // }
+  // Always fast refresh
+  return EInkDisplay::FAST_REFRESH;
 }
 
 void HalDisplay::displayBuffer(HalDisplay::RefreshMode mode, bool turnOffScreen) {
